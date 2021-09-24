@@ -1,7 +1,15 @@
 <!-- <app-btn label="Test Button" (btnClick)="buttonClick($event)"></app-btn> -->
-<div class="pointer">
-  <div class="ball">p</div>
-  <div class="stick">s</div>
+<div style="margin: auto; width: 800px">
+  <div class="pointer">
+    <div class="ball">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Location_dot_orange.svg/480px-Location_dot_orange.svg.png"
+        alt=""
+      />
+    </div>
+    <div class="stick">&nbsp;</div>
+  </div>
+  <!--  <div class="stick-2"></div> -->
 </div>
 <div class="stepper" style="width: 60vw; margin: auto">
   <mat-horizontal-stepper labelPosition="bottom" #stepper>
@@ -56,15 +64,24 @@
         Find the items you often purchase in a ready to order template. You'll
         save time and energy for your next order.
       </p>
-      <p style="margin: auto; width: 400px">
-        <button mat-raised-button color="warn">Go to Proplus now.</button>
-      </p>
+      <p style="margin: auto; width: 400px"></p>
       <div class="btn-group">
         <!--  <button mat-raised-button color="secondary" matStepperPrevious>
           Back
         </button> -->
-        <button mat-raised-button color="primary" (click)="stepper.reset()">
+
+        <button mat-stroked-button color="" (click)="stepper.reset()">
           Reset
+        </button>
+        &nbsp;
+        <button mat-raised-button color="accent">
+          Go to Proplus now.
+          <span
+            ><img
+              src="https://icon-library.com/images/shopping-car-icon/shopping-car-icon-19.jpg"
+              alt=""
+              width="17"
+          /></span>
         </button>
       </div>
     </mat-step>
