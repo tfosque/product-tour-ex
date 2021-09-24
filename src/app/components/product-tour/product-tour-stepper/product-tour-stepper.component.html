@@ -1,0 +1,69 @@
+<!-- <app-btn label="Test Button" (btnClick)="buttonClick($event)"></app-btn> -->
+
+<div class="stepper" style="width: 60vw; margin: auto">
+  <mat-horizontal-stepper labelPosition="bottom" #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>
+          <h4>Login to PRO+</h4>
+        </ng-template>
+        <p>
+          <b> Lets get you started:</b> We'll make you an expert in ordering
+          materials on PRO+ in just a few minutes.
+        </p>
+        <div class="btn-group">
+          <button mat-raised-button color="primary" matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup">
+      <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>Search For Materials</ng-template>
+        <p>
+          You can search for materials from your local branch using the search
+          bar. Once you find the items you need, you can add them to your cart
+          or to your templates.
+        </p>
+        <div class="btn-group">
+          <!--  <button mat-raised-button color="secondary" matStepperPrevious>
+            Back
+          </button> -->
+          <button mat-raised-button color="primary" matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup">
+      <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>Access Order History</ng-template>
+        <p>
+          You can see items you ordered in the past and easily add them to your
+          cart. You can also check the status of your deliveries.
+        </p>
+        <div class="btn-group">
+          <!--  <button mat-raised-button color="secondary" matStepperPrevious>
+            Back
+          </button> -->
+          <button mat-raised-button color="primary" matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Access Templates</ng-template>
+      <p>
+        Find the items you often purchase in a ready to order template. You'll
+        save time and energy for your next order.
+      </p>
+      <p style="margin: auto; width: 400px">
+        <button mat-raised-button color="warn">Go to Proplus now.</button>
+      </p>
+      <div class="btn-group">
+        <!--  <button mat-raised-button color="secondary" matStepperPrevious>
+          Back
+        </button> -->
+        <button mat-raised-button color="primary" (click)="stepper.reset()">
+          Reset
+        </button>
+      </div>
+    </mat-step>
+  </mat-horizontal-stepper>
+</div>

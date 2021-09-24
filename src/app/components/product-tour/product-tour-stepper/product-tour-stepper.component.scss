@@ -1,0 +1,32 @@
+.stepper {
+  border: solid 2px orange;
+  border-radius: 8px;
+}
+
+div.btn-group {
+  padding-top: 30px;
+  float: right;
+}
+
+p {
+  padding: 15px;
+  margin: 0px 15px;
+  text-align: center;
+}
+
+/* div.mat-step-label.mat-step-label-active.mat-step-label-selected {
+  h4 {
+    font-size: 1.272rem;
+  }
+}
+ */
+:host::ng-deep {
+  div.mat-step-icon {
+    background-color: white;
+    border: solid thin orange;
+    color: white;
+  }
+  div.mat-step-icon-selected {
+    background-color: orange;
+  }
+}
