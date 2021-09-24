@@ -1,3 +1,4 @@
+import { BehaviorSubject, Subscriber } from 'rxjs';
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatStepper } from '@angular/material/stepper';
@@ -14,6 +15,8 @@ export class ProductTourStepperComponent implements OnInit, AfterViewInit {
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
 
+  currStep = new BehaviorSubject<number>(0);
+
   constructor(
     private _formBuilder: FormBuilder,
     private readonly productService: ProductTourService
@@ -26,9 +29,17 @@ export class ProductTourStepperComponent implements OnInit, AfterViewInit {
     });
   }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.productService.currStep$.subscribe(nextStep => {
+      this.currStep.next(nextStep);
+    })
+  }
   ngAfterViewInit() {
     this.stepper.selectedIndex = 0;
+  }
+
+  nextStep(next: number) {
+    this.productService.advanceStepper(next);
   }
 
   buttonClick(input: any) {

@@ -5,25 +5,30 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class ProductTourService {
-  currStep = new BehaviorSubject<number>(0);
-  currStep$ = this.currStep.asObservable();
+  private currStep = new BehaviorSubject<number>(0);
+  public currStep$ = this.currStep.asObservable();
 
-  constructor() {}
+  constructor() { }
 
-  step1(step: number) {
-    console.log('step1');
+  public advanceStepper(step: number) {
+    console.log({ step });
     this.currStep.next(step);
   }
-  step2(step: number) {
-    console.log('step2');
-    this.currStep.next(step);
-  }
-  step3(step: number) {
-    console.log('step3');
-    this.currStep.next(step);
-  }
-  step4(step: number) {
-    console.log('step3');
-    this.currStep.next(step);
-  }
+
+  /*   step1(step: number) {
+      console.log('step1');
+      this.currStep.next(step);
+    }
+    step2(step: number) {
+      console.log('step2');
+      this.currStep.next(step);
+    }
+    step3(step: number) {
+      console.log('step3');
+      this.currStep.next(step);
+    }
+    step4(step: number) {
+      console.log('step3');
+      this.currStep.next(step);
+    } */
 }
