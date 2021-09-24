@@ -1,6 +1,6 @@
 .stepper {
   border: solid 2px orange;
-  border-radius: 8px;
+  border-radius: 6x;
 }
 
 div.btn-group {
@@ -34,14 +34,68 @@ p {
   }
 }
 .pointer {
-  width: 100px;
-  height: 100px;
+  width: 800px;
+  height: auto;
+  text-align: center;
 
   .ball {
-    background-color: orange;
+    // background-color: orange;
+    max-width: 800px;
+    margin: 0;
+    text-align: center;
+    height: 11px;
+    img {
+      width: 20px;
+    }
   }
   .stick {
-    background-color: pink;
+    background-color: orange;
+    height: 44px;
+    width: 6px;
+    margin: auto;
+    text-align: center;
+  }
+}
+/* ANIMATION */
+/* The animation code */
+@keyframes example {
+  from {
+    background-color: red;
+  }
+  to {
+    background-color: yellow;
+  }
+}
+
+/* The element to apply the animation to */
+div.stick-2 {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  animation-name: example;
+  animation-duration: 4s;
+}
+#slide {
+  position: absolute;
+  left: -100px;
+  width: 100px;
+  height: 100px;
+  background: blue;
+  -webkit-animation: slide 0.5s forwards;
+  -webkit-animation-delay: 2s;
+  animation: slide 0.5s forwards;
+  animation-delay: 2s;
+}
+
+@-webkit-keyframes slide {
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes slide {
+  100% {
+    left: 0;
   }
 }
 
