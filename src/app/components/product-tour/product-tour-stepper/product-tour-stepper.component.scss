@@ -29,4 +29,18 @@ p {
   div.mat-step-icon-selected {
     background-color: orange;
   }
+  div.mat-step-lable-active {
+    font-weight: bold;
+  }
+}
+.pointer {
+  width: 100px;
+  height: 100px;
+
+  .ball {
+    background-color: orange;
+  }
+  .stick {
+    background-color: pink;
+  }
 }
