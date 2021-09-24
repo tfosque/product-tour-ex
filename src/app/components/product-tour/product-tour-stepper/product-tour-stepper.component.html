@@ -1,6 +1,13 @@
 <!-- <app-btn label="Test Button" (btnClick)="buttonClick($event)"></app-btn> -->
 <div style="margin: auto; width: 800px">
-  <div class="pointer">
+  <div
+    class="pointer"
+    [ngClass]="{
+      step1: (currStep | async) === 1,
+      step2: (currStep | async) === 2,
+      step3: (currStep | async) === 3
+    }"
+  >
     <div class="ball">
       <img
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Location_dot_orange.svg/480px-Location_dot_orange.svg.png"
@@ -14,9 +21,9 @@
 <div class="stepper" style="width: 60vw; margin: auto">
   <section id="titles" [ngSwitch]="true">
     <h2 *ngSwitchDefault>Welcome to PRO+</h2>
-    <h2 *ngSwitchCase="(currStep | async) === 1">Search Product SKU</h2>
+    <h2 *ngSwitchCase="(currStep | async) === 1">Search for Materials</h2>
     <h2 *ngSwitchCase="(currStep | async) === 2">Order History</h2>
-    <h2 *ngSwitchCase="(currStep | async) === 3">Templates</h2>
+    <h2 *ngSwitchCase="(currStep | async) === 3">Access your Templates</h2>
   </section>
 
   <mat-horizontal-stepper labelPosition="bottom" #stepper>

@@ -34,9 +34,11 @@ p {
   }
 }
 .pointer {
-  width: 800px;
   height: auto;
-  text-align: center;
+  top: 0;
+  left: -111px;
+  position: relative;
+  visibility: hidden;
 
   .ball {
     // background-color: orange;
@@ -51,11 +53,34 @@ p {
   .stick {
     background-color: orange;
     height: 44px;
-    width: 6px;
+    width: 3px;
     margin: auto;
     text-align: center;
   }
 }
+
+.pointer.step1 {
+  height: auto;
+  top: 0;
+  left: -211px;
+  position: relative;
+  visibility: visible;
+}
+.pointer.step2 {
+  height: auto;
+  top: 0;
+  left: 141px;
+  position: relative;
+  visibility: visible;
+}
+.pointer.step3 {
+  height: auto;
+  top: 0;
+  left: 261px;
+  position: relative;
+  visibility: visible;
+}
+
 /* ANIMATION */
 /* The animation code */
 @keyframes example {
