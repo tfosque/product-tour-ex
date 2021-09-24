@@ -4,6 +4,10 @@
   <div class="stick">s</div>
 </div>
 <div class="stepper" style="width: 60vw; margin: auto">
+  <section id="titles" [ngSwitch]="currStep === 1">
+    <h2>Welcome to PRO+</h2>
+  </section>
+
   <mat-horizontal-stepper labelPosition="bottom" #stepper>
     <mat-step [stepControl]="firstFormGroup">
       <form [formGroup]="firstFormGroup">
